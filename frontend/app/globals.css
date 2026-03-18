@@ -8,3 +8,81 @@ body {
   margin: 0;
   padding: 0;
 }
+.Titulohome {
+  color:gold;
+  flex: content;
+  text-align: center;
+  margin-top: 5%;
+  font-weight: bold;
+  font-size: 300%;
+}
+.Botaolinks {
+  display: flex;
+  gap: 200px;
+  margin-top: 13%;
+  justify-content: center;
+}
+.Botaolinks a {
+  flex: 1;
+  max-width: 300px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+.Botaolinks a:hover{
+  transform: scale(1.05);
+}
+.LinkArealuno {
+  background-color: darkblue;
+  color: white;
+}
+.linkBB {
+  background-color: #f6fa06;
+  color: white;
+}
+.comecarchat {
+  background-color: darkblue;
+  color: white;
+}
+.chat{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #1f1f1f;
+  border-radius: 30px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.chat-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+}
+.enviar {
+  background-color: #fbfcff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.enviar:hover {
+  background-color: #1d4ed8;
+}

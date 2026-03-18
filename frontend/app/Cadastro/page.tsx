@@ -43,7 +43,7 @@ export default function Cadastro(){
             <label className="block mb-2 text-sm text-white">E-mail</label>
             <input 
               type="email" 
-              placeholder="seu-email@unipe.edu.br"
+              placeholder="seu-email@cs.unipe.edu.br"
               className="w-full p-3 rounded bg-gray-900/50 border border-gray-600 text-white focus:outline-none focus:border-blue-500 transition"
             />
           </div>

@@ -1,7 +1,12 @@
 export default function Chat(){
     return(
-        <div>
-            <h1>página do chat</h1>
+        <div className="chat">
+            <input 
+                type="text" 
+                placeholder="Digite sua dúvida..." 
+                className="chat-input"
+            />
+            <button className="enviar">Enviar</button>
         </div>
     )
 }
