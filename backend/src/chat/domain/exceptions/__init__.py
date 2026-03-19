@@ -1,0 +1,1 @@
+from .conversa_nao_encontrada import ConversaNaoEncontradaException

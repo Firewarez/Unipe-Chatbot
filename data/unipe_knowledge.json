@@ -1,0 +1,92 @@
+[
+  {
+    "titulo": "Sobre a UNIPÊ",
+    "conteudo": "O UNIPÊ (Centro Universitário de João Pessoa) é uma instituição de ensino superior localizada em João Pessoa, Paraíba. Fundado em 1971, o UNIPÊ é reconhecido pelo MEC com nota máxima (conceito 5) na avaliação geral de cursos, sendo o único centro universitário do estado da Paraíba com essa classificação. O campus possui mais de 100 mil metros quadrados de área construída, com laboratórios modernos, bibliotecas, quadras esportivas e estacionamento.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "institucional"
+  },
+  {
+    "titulo": "Cursos de Graduação",
+    "conteudo": "O UNIPÊ oferece mais de 100 cursos de graduação nas modalidades presencial, EAD e semipresencial. Entre os principais cursos estão: Medicina, Direito, Enfermagem, Administração, Arquitetura e Urbanismo, Ciências Contábeis, Engenharia Civil, Engenharia de Computação, Psicologia, Odontologia, Fisioterapia, Biomedicina, Nutrição, Farmácia, Pedagogia, Educação Física, Design, Jornalismo, Publicidade e Propaganda, e Sistemas de Informação.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "cursos"
+  },
+  {
+    "titulo": "Curso de Medicina",
+    "conteudo": "O curso de Medicina do UNIPÊ é um dos mais conceituados do Nordeste. Possui duração de 6 anos (12 semestres) e funciona em período integral. O UNIPÊ também oferece Medicina como segunda graduação. O curso conta com laboratórios de anatomia, simulação clínica e hospital-escola para prática supervisionada.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "cursos"
+  },
+  {
+    "titulo": "Curso de Direito",
+    "conteudo": "O curso de Direito do UNIPÊ possui conceito 5 no MEC e é um dos mais tradicionais da Paraíba. Tem duração de 5 anos (10 semestres) e funciona nos turnos matutino e noturno. O curso conta com Núcleo de Prática Jurídica (NPJ) para estágios supervisionados.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "cursos"
+  },
+  {
+    "titulo": "Cursos de Engenharia",
+    "conteudo": "O UNIPÊ oferece diversos cursos de Engenharia: Engenharia Civil, Engenharia de Computação, Engenharia Elétrica e Engenharia de Produção. Os cursos de engenharia possuem laboratórios equipados e parcerias com empresas para estágios.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "cursos"
+  },
+  {
+    "titulo": "Cursos de Tecnologia e Computação",
+    "conteudo": "Na área de tecnologia, o UNIPÊ oferece os cursos de Sistemas de Informação (bacharelado), Engenharia de Computação, Análise e Desenvolvimento de Sistemas (tecnólogo) e Ciência de Dados. Os cursos possuem laboratórios de informática modernos e parcerias com empresas de tecnologia.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "cursos"
+  },
+  {
+    "titulo": "Pós-Graduação",
+    "conteudo": "O UNIPÊ oferece mais de 130 cursos de pós-graduação, incluindo especializações (lato sensu) e mestrados (stricto sensu). As áreas incluem: Direito, Saúde, Gestão, Educação, Tecnologia, entre outras. Os cursos de pós-graduação são oferecidos nas modalidades presencial e EAD.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "pos-graduacao"
+  },
+  {
+    "titulo": "Modalidades de Ensino",
+    "conteudo": "O UNIPÊ oferece três modalidades de ensino: Presencial (aulas no campus em João Pessoa), EAD (aulas 100% online com material digital) e Semipresencial (aulas online com encontros presenciais no polo). A modalidade EAD conta com plataforma de ensino virtual, tutores online e biblioteca digital.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "modalidades"
+  },
+  {
+    "titulo": "Vestibular e Formas de Ingresso",
+    "conteudo": "As formas de ingresso no UNIPÊ incluem: Vestibular tradicional (prova presencial), Vestibular online, ENEM (nota do Exame Nacional do Ensino Médio), Transferência externa (de outras instituições) e Segunda graduação. O UNIPÊ divulga editais de vestibular regularmente em seu site oficial.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "vestibular"
+  },
+  {
+    "titulo": "Bolsas e Financiamento",
+    "conteudo": "O UNIPÊ oferece diversas opções de bolsas e financiamento: ProUni (bolsas do governo federal), FIES (financiamento estudantil do governo), bolsas institucionais por mérito acadêmico, convênios com empresas e descontos para funcionários públicos. Também há programas de bolsa para monitoria e iniciação científica.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "financeiro"
+  },
+  {
+    "titulo": "Infraestrutura do Campus",
+    "conteudo": "O campus do UNIPÊ possui: mais de 100 laboratórios modernos, biblioteca central com acervo de mais de 100 mil títulos, clínicas-escola (odontologia, psicologia, fisioterapia), hospital veterinário, complexo esportivo com piscina, quadras e academia, estacionamento com mais de 3 mil vagas, praça de alimentação com restaurantes e lanchonetes, e Wi-Fi em todo o campus.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "infraestrutura"
+  },
+  {
+    "titulo": "Localização e Contato",
+    "conteudo": "O UNIPÊ está localizado na BR-230, Km 22, s/n - Água Fria, João Pessoa - PB, CEP: 58053-000. Telefone: (83) 2106-9200. Site oficial: www.unipe.edu.br. O campus é de fácil acesso pela BR-230 e possui amplo estacionamento.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "contato"
+  },
+  {
+    "titulo": "Horários de Funcionamento",
+    "conteudo": "O UNIPÊ funciona de segunda a sexta-feira nos seguintes turnos: Matutino (7h às 12h), Vespertino (13h às 18h) e Noturno (18h30 às 22h30). Aos sábados, alguns cursos possuem atividades complementares. A secretaria acadêmica funciona de segunda a sexta, das 8h às 20h.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "horarios"
+  },
+  {
+    "titulo": "Extensão e Projetos Sociais",
+    "conteudo": "O UNIPÊ desenvolve diversos projetos de extensão e ação social, incluindo: atendimento jurídico gratuito pelo NPJ, clínica-escola de psicologia com atendimento à comunidade, programas de saúde comunitária, projetos de inclusão digital, ações ambientais e parcerias com ONGs e instituições sociais.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "extensao"
+  },
+  {
+    "titulo": "Pesquisa e Iniciação Científica",
+    "conteudo": "O UNIPÊ possui programas de iniciação científica (PIBIC) com bolsas para alunos de graduação. A instituição realiza anualmente o Encontro de Iniciação Científica e possui grupos de pesquisa registrados no CNPq em diversas áreas do conhecimento. Os projetos de pesquisa são orientados por professores doutores e mestres.",
+    "fonte": "site oficial unipe.edu.br",
+    "categoria": "pesquisa"
+  }
+]

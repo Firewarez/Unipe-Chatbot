@@ -1,0 +1,32 @@
+============================= test session starts =============================
+collecting ... collected 27 items
+
+src/chat/tests/domain_tests/test_entidades.py::TestConversa::test_criar_conversa PASSED [  3%]
+src/chat/tests/domain_tests/test_entidades.py::TestConversa::test_titulo_padrao PASSED [  7%]
+src/chat/tests/domain_tests/test_entidades.py::TestConversa::test_adicionar_mensagem PASSED [ 11%]
+src/chat/tests/domain_tests/test_entidades.py::TestConversa::test_atualizar_titulo PASSED [ 14%]
+src/chat/tests/domain_tests/test_entidades.py::TestConversa::test_ids_unicos PASSED [ 18%]
+src/chat/tests/domain_tests/test_entidades.py::TestMensagem::test_criar_mensagem_usuario PASSED [ 22%]
+src/chat/tests/domain_tests/test_entidades.py::TestMensagem::test_criar_mensagem_bot PASSED [ 25%]
+src/chat/tests/domain_tests/test_entidades.py::TestMensagem::test_remetente_invalido PASSED [ 29%]
+src/chat/tests/domain_tests/test_entidades.py::TestMensagem::test_ids_unicos PASSED [ 33%]
+src/chat/tests/domain_tests/test_entidades.py::TestConhecimento::test_criar_conhecimento PASSED [ 37%]
+src/chat/tests/domain_tests/test_entidades.py::TestConhecimento::test_ids_unicos PASSED [ 40%]
+src/chat/tests/domain_tests/test_value_objects.py::TestConteudoMensagem::test_criar PASSED [ 44%]
+src/chat/tests/domain_tests/test_value_objects.py::TestConteudoMensagem::test_igualdade PASSED [ 48%]
+src/chat/tests/domain_tests/test_value_objects.py::TestConteudoMensagem::test_desigualdade PASSED [ 51%]
+src/chat/tests/domain_tests/test_value_objects.py::TestConteudoMensagem::test_imutabilidade PASSED [ 55%]
+src/chat/tests/domain_tests/test_value_objects.py::TestRespostaIA::test_criar PASSED [ 59%]
+src/chat/tests/domain_tests/test_value_objects.py::TestRespostaIA::test_padrao PASSED [ 62%]
+src/chat/tests/domain_tests/test_value_objects.py::TestRespostaIA::test_igualdade PASSED [ 66%]
+src/chat/tests/domain_tests/test_value_objects.py::TestRespostaIA::test_imutabilidade PASSED [ 70%]
+src/chat/tests/application_tests/test_buscar_conhecimento.py::TestBuscarConhecimentoHandler::test_com_resultados PASSED [ 74%]
+src/chat/tests/application_tests/test_buscar_conhecimento.py::TestBuscarConhecimentoHandler::test_sem_resultados PASSED [ 77%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestEnviarMensagemHandler::test_com_conversa_existente PASSED [ 81%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestEnviarMensagemHandler::test_cria_conversa_nova PASSED [ 85%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestEnviarMensagemHandler::test_sem_contexto_rag PASSED [ 88%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestEnviarMensagemCommand::test_conteudo_vazio PASSED [ 92%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestEnviarMensagemCommand::test_conversa_id_vazio PASSED [ 96%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestEnviarMensagemCommand::test_dados_validos PASSED [100%]
+
+============================= 27 passed in 0.05s ==============================

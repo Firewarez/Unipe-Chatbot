@@ -1,4 +1,0 @@
-from .IConversaRepository import IConversaRepository
-from .IConhecimentoRepository import IConhecimentoRepository
-from .IIAService import IIAService
-from .IVectorStoreService import IVectorStoreService
