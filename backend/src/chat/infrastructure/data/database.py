@@ -39,6 +39,15 @@ class ConhecimentoModel(Base):
     criado_em = Column(DateTime, default=datetime.now)
 
 
+class OutboxEventModel(Base):
+    __tablename__ = "outbox_events"
+    id = Column(String, primary_key=True)
+    event_type = Column(String, nullable=False, index=True)
+    payload = Column(Text, nullable=False)
+    occurred_at = Column(DateTime, default=datetime.utcnow)
+    published_at = Column(DateTime, nullable=True)
+
+
 def criar_tabelas():
     Base.metadata.create_all(bind=engine)
 

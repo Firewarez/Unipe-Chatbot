@@ -6,8 +6,11 @@ from sqlalchemy.orm import Session
 from chat.infrastructure.data.database import get_db
 from chat.infrastructure.data.conversa_repository import ConversaRepository
 from chat.infrastructure.data.mensagem_repository import MensagemRepository
+from chat.infrastructure.data.outbox_repository import OutboxRepository
 from chat.infrastructure.external_services.ollama_service import OllamaService
 from chat.infrastructure.external_services.chroma_service import ChromaDBService
+from chat.infrastructure.messaging import get_event_bus
+from chat.infrastructure.messaging.outbox_event_publisher import OutboxEventPublisher
 from chat.application.use_cases.enviar_mensagem.enviar_mensagem_command import EnviarMensagemCommand
 from chat.application.use_cases.enviar_mensagem.enviar_mensagem_handler import EnviarMensagemHandler
 from chat.domain.entities.conversa import Conversa
@@ -48,6 +51,7 @@ class MensagemHistoricoResponse(BaseModel):
 # --- Serviços singleton ---
 _ollama_service = OllamaService(model_name="llama3.2:1b")
 _chroma_service = ChromaDBService()
+_event_bus = get_event_bus()
 
 
 # --- Endpoints ---
@@ -56,9 +60,11 @@ def enviar_mensagem(request: MensagemRequest, db: Session = Depends(get_db)):
     try:
         cmd = EnviarMensagemCommand(conversa_id=request.conversa_id, conteudo=request.conteudo, usuario_id=request.usuario_id)
         cmd.validar()
+        event_publisher = OutboxEventPublisher(outbox_repo=OutboxRepository(db), event_bus=_event_bus)
         handler = EnviarMensagemHandler(
             conversa_repository=ConversaRepository(db), mensagem_repository=MensagemRepository(db),
             ia_service=_ollama_service, vector_store_service=_chroma_service,
+            event_publisher=event_publisher,
         )
         resp = handler.handle(cmd)
         return MensagemResponse(resposta=resp.texto, fontes=list(resp.fontes), confianca=resp.confianca, conversa_id=request.conversa_id)
