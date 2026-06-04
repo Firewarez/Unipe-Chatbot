@@ -1,0 +1,96 @@
+﻿python : c:\Users\Admin
+istrador\AppData\Local\
+Programs\Python\Python3
+13\Lib\site-packages\py
+test_asyncio\plugin.py:
+208: PytestDeprecationW
+arning: The 
+configuration option "a
+syncio_default_fixture_
+loop_scope" is unset.
+No linha:1 caractere:1
++ python -m pytest 
+src/chat/tests -v 
+--tb=short 2>&1 | 
+Out-File -Encodi ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (c:\Users\Admi   
+ ni...cope" is unse    
+t.:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+The event loop scope 
+for asynchronous 
+fixtures will default 
+to the fixture caching 
+scope. Future versions 
+of pytest-asyncio will 
+default the loop scope 
+for asynchronous 
+fixtures to function 
+scope. Set the default 
+fixture loop scope 
+explicitly in order to 
+avoid unexpected 
+behavior in the 
+future. Valid fixture 
+loop scopes are: 
+"function", "class", 
+"module", "package", 
+"session"
+
+  warnings.warn(PytestD
+eprecationWarning(_DEFA
+ULT_FIXTURE_LOOP_SCOPE_
+UNSET))
+============================= test session starts =============================
+platform win32 -- Python 3.13.0, pytest-8.3.0, pluggy-1.6.0 -- C:\Users\Administrador\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Administrador\Documents\Projetos\ChatBot\backend
+plugins: anyio-4.12.1, asyncio-0.24.0
+asyncio: mode=Mode.STRICT, default_loop_scope=None
+collecting ... collected 34 items
+
+src/chat/tests/application_tests/test_buscar_conhecimento.py::TestBuscarConhecimento::test_com_resultados PASSED [  2%]
+src/chat/tests/application_tests/test_buscar_conhecimento.py::TestBuscarConhecimento::test_sem_resultados PASSED [  5%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestEnviarMensagemHandler::test_conversa_existente PASSED [  8%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestEnviarMensagemHandler::test_cria_conversa_nova PASSED [ 11%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestEnviarMensagemHandler::test_sem_contexto PASSED [ 14%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestCommand::test_vazio PASSED [ 17%]
+src/chat/tests/application_tests/test_enviar_mensagem.py::TestCommand::test_valido PASSED [ 20%]
+src/chat/tests/domain_tests/test_entidades.py::TestConversa::test_criar PASSED [ 23%]
+src/chat/tests/domain_tests/test_entidades.py::TestConversa::test_titulo_padrao PASSED [ 26%]
+src/chat/tests/domain_tests/test_entidades.py::TestConversa::test_adicionar_mensagem PASSED [ 29%]
+src/chat/tests/domain_tests/test_entidades.py::TestConversa::test_atualizar_titulo PASSED [ 32%]
+src/chat/tests/domain_tests/test_entidades.py::TestConversa::test_ids_unicos PASSED [ 35%]
+src/chat/tests/domain_tests/test_entidades.py::TestMensagem::test_criar_usuario PASSED [ 38%]
+src/chat/tests/domain_tests/test_entidades.py::TestMensagem::test_criar_bot PASSED [ 41%]
+src/chat/tests/domain_tests/test_entidades.py::TestMensagem::test_remetente_invalido PASSED [ 44%]
+src/chat/tests/domain_tests/test_entidades.py::TestMensagem::test_ids_unicos PASSED [ 47%]
+src/chat/tests/domain_tests/test_entidades.py::TestConhecimento::test_criar PASSED [ 50%]
+src/chat/tests/domain_tests/test_entidades.py::TestConhecimento::test_ids_unicos PASSED [ 52%]
+src/chat/tests/domain_tests/test_value_objects.py::TestConteudoMensagem::test_criar PASSED [ 55%]
+src/chat/tests/domain_tests/test_value_objects.py::TestConteudoMensagem::test_igualdade PASSED [ 58%]
+src/chat/tests/domain_tests/test_value_objects.py::TestConteudoMensagem::test_desigualdade PASSED [ 61%]
+src/chat/tests/domain_tests/test_value_objects.py::TestConteudoMensagem::test_imutavel PASSED [ 64%]
+src/chat/tests/domain_tests/test_value_objects.py::TestRespostaIA::test_criar PASSED [ 67%]
+src/chat/tests/domain_tests/test_value_objects.py::TestRespostaIA::test_padrao PASSED [ 70%]
+src/chat/tests/domain_tests/test_value_objects.py::TestRespostaIA::test_igualdade PASSED [ 73%]
+src/chat/tests/domain_tests/test_value_objects.py::TestRespostaIA::test_imutavel PASSED [ 76%]
+src/chat/tests/infrastructure_tests/test_api.py::TestHealth::test_root PASSED [ 79%]
+src/chat/tests/infrastructure_tests/test_api.py::TestHealth::test_health PASSED [ 82%]
+src/chat/tests/infrastructure_tests/test_api.py::TestConversa::test_criar PASSED [ 85%]
+src/chat/tests/infrastructure_tests/test_api.py::TestConversa::test_buscar_existente PASSED [ 88%]
+src/chat/tests/infrastructure_tests/test_api.py::TestConversa::test_buscar_inexistente PASSED [ 91%]
+src/chat/tests/infrastructure_tests/test_api.py::TestConversa::test_listar PASSED [ 94%]
+src/chat/tests/infrastructure_tests/test_api.py::TestMensagem::test_enviar_mock PASSED [ 97%]
+src/chat/tests/infrastructure_tests/test_api.py::TestMensagem::test_vazio PASSED [100%]
+
+============================= 34 passed in 2.05s ==============================

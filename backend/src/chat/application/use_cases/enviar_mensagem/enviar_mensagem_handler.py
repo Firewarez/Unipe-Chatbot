@@ -42,7 +42,7 @@ class EnviarMensagemHandler:
                 remetente=mensagem_usuario.remetente,
                 timestamp=mensagem_usuario.timestamp.isoformat(),
             ))
-        contexto = self._vector_store.buscar_similares(texto=command.conteudo, limite=3)
+        contexto = self._vector_store.buscar_similares(texto=command.conteudo, limite=5)
         resposta = self._ia_service.gerar_resposta(pergunta=command.conteudo, contexto=contexto)
         mensagem_bot = Mensagem(conversa_id=command.conversa_id, conteudo=resposta.texto, remetente="bot")
         self._mensagem_repo.salvar(mensagem_bot)

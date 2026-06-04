@@ -21,8 +21,10 @@ def carregar_conhecimento():
     with open(json_path, "r", encoding="utf-8") as f:
         docs = json.load(f)
 
-    print(f"Carregando {len(docs)} documentos no ChromaDB...")
     chroma = ChromaDBService()
+    chroma.limpar_documentos()
+
+    print(f"Carregando {len(docs)} documentos no ChromaDB...")
     for i, doc in enumerate(docs):
         chroma.adicionar_documento(
             documento_id=f"unipe_{doc['categoria']}_{i}",

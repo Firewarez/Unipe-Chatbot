@@ -10,6 +10,8 @@ interface Mensagem {
   timestamp: string;
 }
 
+const URL_API = process.env.NEXT_PUBLIC_API_URL ?? "http://127.0.0.1:8000/api/chat";
+
 export default function Chat() {
   const [mensagens, setMensagens] = useState<Mensagem[]>([]);
   const [input, setInput] = useState("");
@@ -18,7 +20,6 @@ export default function Chat() {
   const usuarioId = "brenno_user";
   const conversaId = "conversa_central_unipe_01"; 
 
-  const URL_API = "http://127.0.0.1:8000/api/chat";
   const fimDasMensagensRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

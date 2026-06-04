@@ -1,0 +1,36 @@
+# Coloque aqui uma URL oficial por linha.
+# Linhas iniciadas com # sao ignoradas.
+https://cursos.unipe.edu.br/graduacao
+https://cursos.unipe.edu.br/grad-enfermagem-unipe/p
+https://cursos.unipe.edu.br/grad-direito-unipe/p
+https://cursos.unipe.edu.br/grad-educacao-fisica-unipe/p
+https://cursos.unipe.edu.br/grad-fisioterapia-unipe/p
+https://cursos.unipe.edu.br/grad-analise-e-desenvolvimento-de-sistemas-unipe/p
+https://www.unipe.edu.br/o-unipe/canais-de-atendimento/
+https://www.unipe.edu.br/servicos-a-comunidade/clinica-escola-de-odontologia/
+https://www.unipe.edu.br/processo-seletivo
+https://www.unipe.edu.br/beneficios/bolsas-de-estudo/?utm_source=%28direct%29
+https://www.unipe.edu.br/beneficios/financiamentos/?utm_source=%28direct%29
+https://www.unipe.edu.br/beneficios/bolsas-de-estudo/prouni/?utm_source=%28direct%29
+https://www.unipe.edu.br/servicos-a-comunidade/?utm_campaign=&utm_content=&utm_medium=&utm_source=(direct)&utm_term=&gclid=
+https://www.unipe.edu.br/o-unipe?&utm_source=(direct)
+https://www.unipe.edu.br/premios-e-rankings/?utm_source=%28direct%29
+https://www.cruzeirodosuleducacional.com.br/a-companhia/nosso-jeito-de-ensinar/?utm_source=(direct)
+https://www.cruzeirodosuleducacional.com.br/
+https://www.unipe.edu.br/
+https://www.unipe.edu.br/graduacao/?area=Engenharia+e+Tecnologia%21&pagina=1&&utm_source=(direct)
+https://cursos.unipe.edu.br/grad-ciencia-da-computacao-unipe/p
+https://cursos.unipe.edu.br/grad-engenharia-civil-unipe/p
+https://cursos.cruzeirodosulvirtual.com.br/grad-engenharia-eletrica-semipresencial-cruzeiro-do-sul-virtual/p
+https://cursos.cruzeirodosulvirtual.com.br/grad-engenharia-mecanica-semipresencial-cruzeiro-do-sul-virtual/p
+https://cursos.cruzeirodosulvirtual.com.br/grad-gestao-de-tecnologia-da-informacao-cruzeiro-do-sul-virtual/p
+https://www.unipe.edu.br/biblioteca/
+https://cursos.cruzeirodosulvirtual.com.br/grad-ciencia-de-dados-cruzeiro-do-sul-virtual/p
+https://www.unipe.edu.br/acessibilidade/libras/
+https://www.unipe.edu.br/comite-de-etica-em-humanos/?utm_source=%28direct%29
+https://www.unipe.edu.br/comite-de-etica-em-animais/?utm_source=%28direct%29
+https://www.unipe.edu.br/processo-seletivo/pos-graduacao/?utm_source=%28direct%29
+https://www.unipe.edu.br/teste-vocacional/?utm_source=%28direct%29
+https://www.unipe.edu.br/sou-candidato/?utm_source=%28direct%29
+https://www.unipe.edu.br/cursos-tecnicos/?utm_source=%28direct%29
+https://www.unipe.edu.br/cursos-profissionalizantes/?utm_source=%28direct%29
