@@ -34,10 +34,19 @@ class ChromaDBService(IVectorStoreService):
         def score(item: tuple[int, str]) -> tuple[int, int]:
             indice, documento = item
             doc_lower = documento.lower()
-            matches = sum(1 for termo in termos if termo in doc_lower)
-            return matches, -indice
+            matches = sum(doc_lower.count(termo) for termo in termos)
+            penalty = self._penalidade_ruido(doc_lower)
+            return matches - penalty, -indice
 
         return [doc for _, doc in sorted(enumerate(documentos), key=score, reverse=True)]
+
+    def _penalidade_ruido(self, texto: str) -> int:
+        termos_ruido = {
+            "cookies", "política de cookies", "política de privacidade", "visto confere",
+            "certidão de nascimento", "imprimir comprovante", "preferências",
+            "suplência", "supletivo", "firma reconhecida",
+        }
+        return sum(2 for termo in termos_ruido if termo in texto)
 
     def _termos_relevantes(self, texto: str) -> set[str]:
         stopwords = {
@@ -51,6 +60,8 @@ class ChromaDBService(IVectorStoreService):
         }
         if "ads" in texto.lower():
             termos.update({"analise", "análise", "desenvolvimento", "sistemas"})
+        if "atendimento" in texto.lower():
+            termos.update({"caa", "duda", "telefone", "email", "aluno", "ex-alunos", "0800"})
         return termos
 
     def adicionar_documento(self, documento_id: str, conteudo: str, metadata: Optional[dict] = None) -> None:

@@ -15,7 +15,12 @@ services:
       - key: CHROMA_PERSIST_DIRECTORY
         value: ./chroma_data
       - key: IA_PROVIDER
-        value: demo
+        value: groq
+      - key: GROQ_MODEL
+        value: llama-3.1-8b-instant
+      # Cadastre esta variavel manualmente no Render, sem commitar a chave.
+      # - key: GROQ_API_KEY
+      #   sync: false
       - key: OLLAMA_MODEL
         value: llama3.2:1b
       # Necessario em deploy se o Ollama nao estiver rodando no mesmo servico.

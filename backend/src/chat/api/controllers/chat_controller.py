@@ -10,6 +10,7 @@ from chat.infrastructure.data.conversa_repository import ConversaRepository
 from chat.infrastructure.data.mensagem_repository import MensagemRepository
 from chat.infrastructure.data.outbox_repository import OutboxRepository
 from chat.infrastructure.external_services.demo_ia_service import DemoIAService
+from chat.infrastructure.external_services.groq_service import GroqService
 from chat.infrastructure.external_services.ollama_service import OllamaService
 from chat.infrastructure.external_services.chroma_service import ChromaDBService
 from chat.infrastructure.messaging import get_event_bus
@@ -52,8 +53,11 @@ class MensagemHistoricoResponse(BaseModel):
 
 
 def _criar_ia_service():
-    if os.getenv("IA_PROVIDER", "ollama").lower() == "demo":
+    provider = os.getenv("IA_PROVIDER", "ollama").lower()
+    if provider == "demo":
         return DemoIAService()
+    if provider == "groq":
+        return GroqService(model_name=os.getenv("GROQ_MODEL", "llama-3.1-8b-instant"))
     return OllamaService(model_name=os.getenv("OLLAMA_MODEL", "llama3.2:1b"))
 
 
