@@ -1,11 +1,11 @@
-import Link from "next/link"
-import {Metadata} from "next";
+import Link from "next/link";
+import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
   title: 'ChatBot da Unipê v1 - Login',
   description: 'Chat para tirar dúvidas sobre a instituição.',
-  openGraph:{
+  openGraph: {
     title: 'ChatBot da Unipê v1',
     description: 'Chat para tirar dúvidas sobre a instituição.',
   },
@@ -14,64 +14,61 @@ export const metadata: Metadata = {
     follow: true,
     nocache: true,
     googleBot: {
-      index:true,
+      index: true,
       follow: true,
       noimageindex: true,
     }
   }
-}
+};
 
-
-export default function Cadastro(){
-    return(
-        <main className="relative flex min-h-screen items-center justify-center p-4">
-      <div className="fixed inset-0 -z-10">
+export default function Cadastro() {
+  return (
+    <main className="auth-main">
+      <div className="auth-bg-wrapper">
         <Image
           src="/TOPO_estrela.jpg"
           alt="Background Unipê"
           fill
           priority
-          className="object[0%_0%_35%] brightness-[0.3]"
+          className="auth-bg-image"
         />
       </div>
-      <div className="w-full max-w-md bg-gray-800/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-700">
-        <h1 className="text-3xl font-bold text-center mb-6 text-yellow-500">Unipê ChatBot</h1>
-        <p className="text-center text-gray-400 mb-8">Crie sua conta</p>
+      <div className="auth-card">
+        <h1 className="auth-title">Unipê ChatBot</h1>
+        <p className="auth-subtitle">Crie sua conta</p>
 
-        <form className="flex flex-col gap-4">
-          <div>
-            <label className="block mb-2 text-sm text-white">E-mail</label>
+        <form className="auth-form">
+          <div className="form-group">
+            <label>E-mail</label>
             <input 
               type="email" 
               placeholder="seu-email@cs.unipe.edu.br"
-              className="w-full p-3 rounded bg-gray-900/50 border border-gray-600 text-white focus:outline-none focus:border-blue-500 transition"
+              className="form-input"
             />
           </div>
-          <div>
-            <label className="block mb-2 text-sm text-white">Senha</label>
-            <input type="password" 
-              placeholder="••••••••"
-              className="w-full p-3 rounded bg-gray-900/50 border border-gray-600 text-white focus:outline-none focus:border-blue-500 transition"
-            />
-          </div>
-
-          <div>
-            <label className="block mb-2 text-sm text-white">Confirmar senha</label>
+          <div className="form-group">
+            <label>Senha</label>
             <input 
               type="password" 
               placeholder="••••••••"
-              className="w-full p-3 rounded bg-gray-900/50 border border-gray-600 text-white focus:outline-none focus:border-blue-500 transition"
+              className="form-input"
             />
           </div>
 
-          <button 
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg mt-4 transition-colors"
-          >
+          <div className="form-group">
+            <label>Confirmar senha</label>
+            <input 
+              type="password" 
+              placeholder="••••••••"
+              className="form-input"
+            />
+          </div>
+
+          <button type="submit" className="auth-button">
             Cadastrar
           </button>
         </form>
       </div>
     </main>
-    )
+  );
 }
