@@ -1,4 +1,6 @@
 """ChatController - Equiv. OrdersController.cs. Endpoints FastAPI."""
+import os
+
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
@@ -7,6 +9,7 @@ from chat.infrastructure.data.database import get_db
 from chat.infrastructure.data.conversa_repository import ConversaRepository
 from chat.infrastructure.data.mensagem_repository import MensagemRepository
 from chat.infrastructure.data.outbox_repository import OutboxRepository
+from chat.infrastructure.external_services.demo_ia_service import DemoIAService
 from chat.infrastructure.external_services.ollama_service import OllamaService
 from chat.infrastructure.external_services.chroma_service import ChromaDBService
 from chat.infrastructure.messaging import get_event_bus
@@ -48,9 +51,16 @@ class MensagemHistoricoResponse(BaseModel):
     timestamp: str
 
 
+def _criar_ia_service():
+    if os.getenv("IA_PROVIDER", "ollama").lower() == "demo":
+        return DemoIAService()
+    return OllamaService(model_name=os.getenv("OLLAMA_MODEL", "llama3.2:1b"))
+
+
 # --- Serviços singleton ---
-_ollama_service = OllamaService(model_name="llama3.2:1b")
-_chroma_service = ChromaDBService()
+_ia_service = _criar_ia_service()
+_ollama_service = _ia_service
+_chroma_service = ChromaDBService(persist_directory=os.getenv("CHROMA_PERSIST_DIRECTORY", "./chroma_data"))
 _event_bus = get_event_bus()
 
 

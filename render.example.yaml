@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: unipe-chatbot-api
+    runtime: python
+    plan: free
+    buildCommand: cd backend && pip install -r requirements.txt && PYTHONPATH=src python -m chat.infrastructure.data_loader.import_chroma_export --input ../data/chroma_export.json
+    startCommand: cd backend && PYTHONPATH=src python -m uvicorn chat.api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: BACKEND_CORS_ORIGINS
+        value: https://seu-site.netlify.app
+      - key: DATABASE_URL
+        value: sqlite:///./chatbot.db
+      - key: CHROMA_PERSIST_DIRECTORY
+        value: ./chroma_data
+      - key: IA_PROVIDER
+        value: demo
+      - key: OLLAMA_MODEL
+        value: llama3.2:1b
+      # Necessario em deploy se o Ollama nao estiver rodando no mesmo servico.
+      # - key: OLLAMA_HOST
+      #   value: https://seu-servidor-ollama
