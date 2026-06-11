@@ -1,0 +1,2 @@
+"""Camada API do catalogo."""
+

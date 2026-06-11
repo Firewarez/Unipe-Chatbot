@@ -1,0 +1,13 @@
+flowchart LR
+    Client["Cliente / Angular"] --> Gateway["FastAPI Gateway"]
+    Gateway --> Pedidos["Pedidos API"]
+    Gateway --> Catalogo["Catalogo API"]
+    Gateway --> Notificacoes["Notificacoes API"]
+    Pedidos --> SqlServer["SQL Server"]
+    Catalogo --> SqlServer
+    Pedidos --> Redis["Redis Cache"]
+    Pedidos --> RabbitMQ["RabbitMQ"]
+    RabbitMQ --> Notificacoes
+    Notificacoes --> Client
+    Pedidos --> Catalogo
+
