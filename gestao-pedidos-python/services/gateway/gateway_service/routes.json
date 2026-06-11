@@ -1,0 +1,31 @@
+{
+  "routes": [
+    {
+      "route_id": "pedidos",
+      "prefix": "/api/pedidos",
+      "cluster_id": "pedidos-cluster"
+    },
+    {
+      "route_id": "catalogo",
+      "prefix": "/api/produtos",
+      "cluster_id": "catalogo-cluster"
+    },
+    {
+      "route_id": "notificacoes",
+      "prefix": "/api/notificacoes",
+      "cluster_id": "notificacoes-cluster"
+    }
+  ],
+  "clusters": {
+    "pedidos-cluster": {
+      "destination": "http://localhost:8001"
+    },
+    "catalogo-cluster": {
+      "destination": "http://localhost:8002"
+    },
+    "notificacoes-cluster": {
+      "destination": "http://localhost:8003"
+    }
+  }
+}
+

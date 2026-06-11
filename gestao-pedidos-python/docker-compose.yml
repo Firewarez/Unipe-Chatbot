@@ -1,0 +1,137 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: gp-sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:-Your_password123}
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    networks:
+      - gestao-pedidos
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -C -S localhost -U sa -P \"$${MSSQL_SA_PASSWORD}\" -Q \"SELECT 1\" || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: gp-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    networks:
+      - gestao-pedidos
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  redis:
+    image: redis:7-alpine
+    container_name: gp-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - gestao-pedidos
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+
+  catalogo-api:
+    build:
+      context: .
+      dockerfile: services/catalogo/Dockerfile
+    container_name: gp-catalogo-api
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-mssql+pymssql://sa:Your_password123@sqlserver:1433/master}
+    ports:
+      - "8002:8000"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    networks:
+      - gestao-pedidos
+
+  pedidos-api:
+    build:
+      context: .
+      dockerfile: services/pedidos/Dockerfile
+    container_name: gp-pedidos-api
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-mssql+pymssql://sa:Your_password123@sqlserver:1433/master}
+      CATALOGO_BASE_URL: http://catalogo-api:8000
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8001:8000"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      catalogo-api:
+        condition: service_started
+    networks:
+      - gestao-pedidos
+
+  notificacoes-api:
+    build:
+      context: .
+      dockerfile: services/notificacoes/Dockerfile
+    container_name: gp-notificacoes-api
+    environment:
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/
+      REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8003:8000"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - gestao-pedidos
+
+  gateway:
+    build:
+      context: .
+      dockerfile: services/gateway/Dockerfile
+    container_name: gp-gateway
+    environment:
+      PEDIDOS_BASE_URL: http://pedidos-api:8000
+      CATALOGO_BASE_URL: http://catalogo-api:8000
+      NOTIFICACOES_BASE_URL: http://notificacoes-api:8000
+    ports:
+      - "8080:8000"
+    depends_on:
+      pedidos-api:
+        condition: service_started
+      catalogo-api:
+        condition: service_started
+      notificacoes-api:
+        condition: service_started
+    networks:
+      - gestao-pedidos
+
+volumes:
+  sqlserver-data:
+  rabbitmq-data:
+  redis-data:
+
+networks:
+  gestao-pedidos:
+    driver: bridge
+
